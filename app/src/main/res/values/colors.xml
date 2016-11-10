@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="branco_fonte_logo">#fffffc</color>
+    <color name="azulEscuro">#0e328a</color>
+    <color name="azulMedio">#3972b7</color>
+    <color name="pretoBar">#9e080000</color>
+</resources>

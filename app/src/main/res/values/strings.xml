@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Habitat</string>
+    <string name="msg_boasvindas">Bem Vindo(a)!</string>
+    <string name="endereco_email">habitatpet@hotmail.com</string>
+    <string name="novo_cadastro">Não possui cadastro ainda?</string>
+    <string name="info_cadastro">Para efetuar seu cadastro informe e-mail e senha.</string>
+    <string name="hint_email">email@exemplo.com</string>
+    <string name="hint_senha">senha</string>
+    <string name="btn_Sair">LOGOUT</string>
+    <string name="peixes">Peixes</string>
+    <string name="plantas">Plantas</string>
+    <string name="produtos">Produtos</string>
+    <string name="orcamento">Orçamento</string>
+    <string name="ferramentas">Ferramentas</string>
+    <string name="sobre">Sobre</string>
+    <string name="sair">Sair</string>
+    <string name="localizacao">Localização</string>
+    <string name="detalhes">Detalhamento</string>
+
+    <string name="nome_peixe">Nome</string>
+    <string name="nome_peixe_cientifico">Nome Científico</string>
+    <string name="crifrao">R$</string>
+    <string name="preco_peixe">10,00</string>
+    <string name="disponibilidade">Disponível</string>
+    <string name="status_peixe">Sim</string>
+    <string name="title_activity_mapa">Mapa</string>
+
+    <string name="nome_planta">Nome</string>
+    <string name="nome_planta_cientifico">Nome Científico</string>
+
+    <string name="title_calculadora_aquario">Calculadora de litros p/ aquário quadrados e retangulares</string>
+</resources>

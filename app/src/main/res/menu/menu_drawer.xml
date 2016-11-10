@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/primary_items" android:checkableBehavior="single">
+        <item
+            android:id="@+id/peixesFragment"
+            android:icon="@drawable/ic_fish"
+            android:checked="true"
+            android:title="@string/peixes"/>
+
+        <item
+            android:id="@+id/plantasFragment"
+            android:icon="@drawable/ic_filter_vintage_black_36dp"
+            android:title="@string/plantas"/>
+
+        <item
+            android:id="@+id/produtosFragment"
+            android:icon="@drawable/ic_card_travel_black_36dp"
+            android:title="@string/produtos"/>
+
+        <item
+            android:id="@+id/orcamentoFragment"
+            android:icon="@drawable/ic_create_black_36dp"
+            android:title="@string/orcamento"/>
+
+        <item
+            android:id="@+id/ferramentasFragment"
+            android:icon="@drawable/ic_build_black_36dp"
+            android:title="@string/ferramentas"/>
+
+        <item
+            android:id="@+id/sobreFragment"
+            android:icon="@drawable/ic_info_black_36dp"
+            android:title="@string/sobre"/>
+
+        <item
+            android:id="@+id/sairFragment"
+            android:icon="@drawable/ic_exit_to_app_black_36dp"
+            android:title="@string/sair"/>
+    </group>
+</menu>

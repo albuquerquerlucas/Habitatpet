@@ -1,0 +1,98 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mobile.fragments.CalculaVolumeFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_calculadora_aquario"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:src="@drawable/imgcalcvolume"/>
+
+        <TextView
+            android:id="@+id/txtResultCalcVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="@color/azulEscuro"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/edtNComprimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Comprimento (X) cm"/>
+
+        <EditText
+            android:id="@+id/edtNLargura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Largura (Y) cm"/>
+
+        <EditText
+            android:id="@+id/edtNAltura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Altura (Z) cm"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnCalcular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="35dp"
+                android:paddingLeft="35dp"
+                android:text="Calcular"/>
+
+            <Button
+                android:id="@+id/btnLimparCalcular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="35dp"
+                android:paddingLeft="35dp"
+                android:text="Limpar"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="35dp"
+            android:paddingLeft="35dp"
+            android:text="VOLTAR"/>
+    </LinearLayout>
+
+
+</LinearLayout>

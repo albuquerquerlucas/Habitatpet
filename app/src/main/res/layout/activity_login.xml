@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_s_splash"
+    tools:context="com.mobile.activity.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logoMini"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo"
+            android:scaleX="0.5"
+            android:scaleY="0.5"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Acesso"
+            android:id="@+id/textView"
+            android:textColor="@color/branco_fonte_logo"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:id="@+id/edtLEmail"
+            android:inputType="textEmailAddress"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/branco_fonte_logo"
+            android:hint="Email"
+            android:drawableRight="@mipmap/ic_action_person"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:id="@+id/edtLSenha"
+            android:inputType="textPassword"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/branco_fonte_logo"
+            android:hint="Senha"
+            android:drawableRight="@mipmap/ic_action_secure"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp"
+            android:text="entrar"
+            android:textColor="@color/branco_fonte_logo"
+            android:id="@+id/btnLEntrar"
+            android:layout_gravity="right"
+            android:background="@drawable/btn_entrar_seletor"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/novo_cadastro"
+            android:textColor="@color/azulMedio"
+            android:id="@+id/btnLNovoCadastro"
+            android:background="@drawable/btn_novo_cadastro"/>
+    </LinearLayout>
+
+</RelativeLayout>

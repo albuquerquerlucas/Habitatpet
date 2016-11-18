@@ -1,6 +1,7 @@
 package com.mobile.fragments;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.mobile.R;
@@ -41,6 +43,27 @@ public class ProdutosFragment extends Fragment {
         produtoAdapter = new ItemProdutoAdapter(getActivity().getBaseContext(), new ArrayList<Produto>());
         lista.setAdapter(produtoAdapter);
 
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Produto produto = produtoAdapter.getItem(position);
+                Fragment fragment = null;
+                fragment = new ProdutosDetalhesFragment();
+                Bundle args = new Bundle();
+                args.putString("caminhoFotoProduto", produto.getCaminhoFotoProduto());
+                args.putString("nomeProduto", produto.getNomeProduto());
+                args.putString("referencia", produto.getReferencia());
+                args.putString("descricaoProduto", produto.getDescricaoProduto());
+                args.putString("marca", produto.getMarca());
+                args.putString("modelo", produto.getModelo());
+                args.putString("statusProduto", produto.getStatusProduto());
+                fragment.setArguments(args);
+                if(fragment != null) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.drawer_content, fragment).commit();
+                }
+            }
+        });
         setupToolbar(view);
 
         new RequisicaoTask().execute();

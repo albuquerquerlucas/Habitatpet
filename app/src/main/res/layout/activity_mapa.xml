@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mobile.activity.MapaActivity" >
+    tools:context="com.mobile.activity.MapaActivity"
+    android:background="@drawable/gradient_s_splash">
 
     <include
         android:id="@+id/toolbar"
@@ -14,34 +15,42 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="250dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
 
-    <ScrollView
+    <RelativeLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_below="@+id/map"
-        android:id="@+id/scrollView2">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnVoltarDoMapa"
+        android:layout_below="@+id/map">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
         <LinearLayout
+            android:id="@+id/layoutEndereco"
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Habitat Pet"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:textColor="@color/azulEscuro"
-                android:gravity="center"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Av. da Universidade, 2057 - Benfica"
                 android:textSize="18sp"
+                android:textColor="@color/branco_fonte_logo"
                 android:gravity="center"/>
 
             <TextView
@@ -49,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="Fortaleza - CE, 60020-180"
                 android:textSize="15sp"
+                android:textColor="@color/branco_fonte_logo"
                 android:gravity="center"/>
 
             <TextView
@@ -57,57 +67,56 @@
                 android:text="Fone: (85) 3231-7391"
                 android:textStyle="bold"
                 android:textSize="15sp"
+                android:textColor="@color/branco_fonte_logo"
                 android:gravity="center"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Horário de Funcinamento"
-                    android:textStyle="bold"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:paddingLeft="25dp"
-                    android:text="Seg à Sex: 07:30 – 18:00"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="25dp"
-                    android:text="Sáb: 07:30 – 17:00"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-            <Button
-                android:text="VOLTAR"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="17dp"
-                android:id="@+id/btnVoltarDoMapa" />
         </LinearLayout>
-    </ScrollView>
 
-    <TextView
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="26dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Horário de Funcinamento"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/branco_fonte_logo"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="25dp"
+                android:text="Seg à Sex: 07:30 – 18:00"
+                android:textSize="15sp"
+                android:textColor="@color/branco_fonte_logo"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25dp"
+                android:text="Sáb: 07:30 – 17:00"
+                android:textSize="15sp"
+                android:textColor="@color/branco_fonte_logo"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:text="VOLTAR"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/endereco_email"
-        android:layout_alignBottom="@+id/scrollView2"
-        android:layout_centerHorizontal="true" />
-
-
+        android:layout_margin="5dp"
+        android:id="@+id/btnVoltarDoMapa"
+        android:textColor="@color/branco_fonte_logo"
+        android:background="@drawable/btn_entrar_seletor"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

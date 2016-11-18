@@ -4,4 +4,7 @@
     <color name="azulEscuro">#0e328a</color>
     <color name="azulMedio">#3972b7</color>
     <color name="pretoBar">#9e080000</color>
+
+    <color name="amarelo_claro">#fff8ce</color>
+    <color name="amarelo_escuro">#fff19f</color>
 </resources>

@@ -4,25 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/gradient_s_splash"
     tools:context="com.mobile.fragments.PlantasDetalhesFragment">
 
+    <!-- ToolBar Superior -->
     <include
         android:id="@+id/toolbar"
         layout="@layout/include_toolbar"/>
+    <!-- /ToolBar Superior -->
 
     <!-- Container de dentro -->
-
     <LinearLayout
         android:id="@+id/infoContainer"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:layout_below="@+id/toolbar"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/layoutbarrainferior">
 
         <!-- Container Foto -->
-        <LinearLayout
+        <RelativeLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -31,37 +36,57 @@
                 android:id="@+id/iPlantas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"/>
-        </LinearLayout>
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/px09"/>
+
+            <FrameLayout
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_alignBottom="@+id/iPlantas"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="11dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/logo"
+                    />
+            </FrameLayout>
+        </RelativeLayout>
         <!-- /Container Foto -->
 
-        <!-- Tarja branca -->
+        <!-- Linha
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/azulEscuro">
         </LinearLayout>
-        <!-- /Tarja branca -->
+        /Linha -->
 
+        <!-- Área de Rolagem -->
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:padding="5dp"
-            android:fillViewport="true">
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:fillViewport="true"
+            android:scrollbars="none">
 
+            <!-- 1 e 2 e o Restante -->
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nome: "
                     android:textSize="12sp"
+                    android:textColor="@color/branco_fonte_logo"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
@@ -70,7 +95,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="nome"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textColor="@color/branco_fonte_logo"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -78,6 +104,7 @@
                     android:layout_marginTop="6dp"
                     android:text="N. Científico: "
                     android:textSize="12sp"
+                    android:textColor="@color/branco_fonte_logo"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
@@ -86,55 +113,61 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="nome"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textColor="@color/branco_fonte_logo"/>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp">
-
+            <!-- /1 e 2 Linhas -->
+                <!-- 3 Linha -->
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Crescimento: "
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:gravity="center"/>
-
-                    <TextView
-                        android:id="@+id/txtDetPlantCrescimento"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="nome"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Plantio: "
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:gravity="center"/>
+                    android:layout_marginTop="6dp">
 
-                    <TextView
-                        android:id="@+id/txtDetPlantPlantio"
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="nome"
-                        android:textSize="15sp" />
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Crescimento: "
+                            android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/txtDetPlantCrescimento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="nome"
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
                     </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Plantio: "
+                            android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/txtDetPlantPlantio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="nome"
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="wrap_content"
@@ -146,6 +179,7 @@
                             android:layout_height="wrap_content"
                             android:text="PH: "
                             android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
                             android:textStyle="bold"
                             android:gravity="center"/>
 
@@ -154,31 +188,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="nome"
-                            android:textSize="15sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Temperatura: "
-                            android:textSize="12sp"
-                            android:textStyle="bold"
-                            android:gravity="center"/>
-
-                        <TextView
-                            android:id="@+id/txtDetPlantTemperatura"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="nome"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
                     </LinearLayout>
                 </LinearLayout>
+                <!-- /3 Linha -->
+                <!-- 4 Linha -->
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -195,6 +210,7 @@
                             android:layout_height="wrap_content"
                             android:text="Tamanho: "
                             android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
                             android:textStyle="bold"
                             android:gravity="center"/>
 
@@ -203,7 +219,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="nome"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -217,6 +234,7 @@
                             android:layout_height="wrap_content"
                             android:text="Posição: "
                             android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
                             android:textStyle="bold"
                             android:gravity="center"/>
 
@@ -225,7 +243,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="nome"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -239,6 +258,7 @@
                             android:layout_height="wrap_content"
                             android:text="Emersão: "
                             android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
                             android:textStyle="bold"
                             android:gravity="center"/>
 
@@ -247,11 +267,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="nome"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
                     </LinearLayout>
-
                 </LinearLayout>
-
+                <!-- /4 Linha -->
+                <!-- /5 Linha -->
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -268,6 +289,7 @@
                             android:layout_height="wrap_content"
                             android:text="Substrato: "
                             android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
                             android:textStyle="bold"
                             android:gravity="center"/>
 
@@ -276,7 +298,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="nome"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -290,6 +313,7 @@
                             android:layout_height="wrap_content"
                             android:text="CO²: "
                             android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
                             android:textStyle="bold"
                             android:gravity="center"/>
 
@@ -298,7 +322,39 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="nome"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- /5 Linha -->
+                <!-- 6 Linha -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Temperatura: "
+                            android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/txtDetPlantTemperatura"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="nome"
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -310,8 +366,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Disponibilidade: "
+                            android:text="Disponível: "
                             android:textSize="12sp"
+                            android:textColor="@color/branco_fonte_logo"
                             android:textStyle="bold"
                             android:gravity="center"/>
 
@@ -320,53 +377,68 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="nome"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:textColor="@color/branco_fonte_logo"/>
                     </LinearLayout>
-
-
                 </LinearLayout>
-
-
+                <!-- 6 Linha -->
             </LinearLayout>
-
         </ScrollView>
-
+        <!-- Área de Rolagem -->
     </LinearLayout>
+    <!-- /Container de dentro -->
 
-    <!-- Tarja branca -->
-    <!-- /Tarja branca -->
-
+    <!-- Barra Inferior -->
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/branco_fonte_logo"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
-
-        <Button
-            android:id="@+id/btnAddQtdPeixes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Adicionar p/ Orçamento"/>
-
-        <EditText
-            android:id="@+id/edtQtdPeixes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Quantidade"
-            android:inputType="number"
-            android:textAlignment="center"/>
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/layoutbarrainferior"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/azulEscuro"
-        android:layout_above="@+id/linearLayout"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true">
-    </LinearLayout>
 
-    <!-- /Container de dentro -->
+        <!-- Linha
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/azulEscuro">
+        </LinearLayout>
+        /Linha -->
+        <!-- Barra - Add e Qtd -->
+        <LinearLayout
+            android:id="@+id/layoutBotton"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnAddQtdPeixes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adicionar p/ Orçamento"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/btn_entrar_seletor"
+                android:textColor="@color/branco_fonte_logo"/>
+
+            <EditText
+                android:id="@+id/edtQtdPeixes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:hint="Quantidade"
+                android:textColor="@color/azulEscuro"
+                android:background="#fff8ce"
+                android:inputType="number"
+                android:textAlignment="center"/>
+        </LinearLayout>
+        <!-- /Barra - Add e Qtd -->
+    </LinearLayout>
+    <!-- /Barra Inferior -->
 </RelativeLayout>

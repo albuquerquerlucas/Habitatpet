@@ -13,6 +13,8 @@
     <ListView
         android:id="@+id/listaDeProdutos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:divider="@color/azulEscuro"
+        android:dividerHeight="1dp"/>
 
 </LinearLayout>

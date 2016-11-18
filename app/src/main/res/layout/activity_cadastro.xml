@@ -31,7 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:textColor="@color/branco_fonte_logo"
             android:text="@string/info_cadastro"
             android:id="@+id/textView2" />
@@ -46,9 +47,10 @@
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
             android:ems="10"
-            android:background="@color/branco_fonte_logo"
+            android:background="@color/amarelo_claro"
             android:id="@+id/edtCNome"
             android:hint="Nome e Sobrenome"
+            android:imeOptions="actionNext"
             android:drawableRight="@mipmap/ic_action_person"/>
 
         <EditText
@@ -61,8 +63,9 @@
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
             android:ems="10"
-            android:background="@color/branco_fonte_logo"
+            android:background="@color/amarelo_claro"
             android:id="@+id/edtCEmail"
+            android:imeOptions="actionNext"
             android:hint="@string/hint_email"
             android:drawableRight="@mipmap/ic_action_person"/>
 
@@ -76,8 +79,9 @@
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
             android:ems="10"
-            android:background="@color/branco_fonte_logo"
+            android:background="@color/amarelo_claro"
             android:id="@+id/edtCSenha"
+            android:imeOptions="actionDone"
             android:hint="@string/hint_senha"
             android:drawableRight="@mipmap/ic_action_secure"/>
 

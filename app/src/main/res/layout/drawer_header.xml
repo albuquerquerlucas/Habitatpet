@@ -31,7 +31,7 @@
                 android:layout_height="70dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/fish"
+                android:src="@drawable/icouser"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop" />
         </RelativeLayout>

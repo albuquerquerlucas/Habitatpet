@@ -1,10 +1,12 @@
 package com.mobile.fragments;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mobile.R;
+import com.mobile.entity.Item;
+import com.mobile.entity.Pedido;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -25,6 +29,7 @@ public class PeixesDetalhesFragment extends Fragment {
 
     private EditText edtQuantidade;
     private Button btnAddOrcamento;
+    String nomeItem, qtdItem;
 
     public PeixesDetalhesFragment() {
 
@@ -49,12 +54,15 @@ public class PeixesDetalhesFragment extends Fragment {
 
         edtQuantidade = (EditText) view.findViewById(R.id.edtQtdPeixes);
         btnAddOrcamento = (Button) view.findViewById(R.id.btnAddQtdPeixes);
+
         btnAddOrcamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String qtd = edtQuantidade.getText().toString();
 
-                if(!qtd.isEmpty()){
+                qtdItem = edtQuantidade.getText().toString();
+
+                if(!qtdItem.isEmpty()){
+                    edtQuantidade.setText("");
                     Toast.makeText(getActivity().getApplicationContext(), "Adicionado à lista de Orçamento.", Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(getActivity().getApplicationContext(), "Informe a quantidade.", Toast.LENGTH_LONG).show();
@@ -95,4 +103,5 @@ public class PeixesDetalhesFragment extends Fragment {
             bar.setTitle(activity.getString(R.string.detalhes));
         }
     }
+
 }

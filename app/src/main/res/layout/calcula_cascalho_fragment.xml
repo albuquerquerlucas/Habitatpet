@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient_s_splash"
-    tools:context="com.mobile.fragments.CalculaVolumeFragment">
+    tools:context="com.mobile.fragments.CalculaCascalhoFragment">
 
     <include
         android:id="@+id/toolbar"
@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_calculadora_aquario"
+            android:text="@string/title_calculadora_aquario_cascalho"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@color/branco_fonte_logo"
@@ -39,7 +39,7 @@
             android:layout_gravity="center"
             android:scaleX="0.8"
             android:scaleY="0.8"
-            android:src="@drawable/imgvolume"/>
+            android:src="@drawable/imgcascalho"/>
 
         <TextView
             android:id="@+id/txtResultCalcVolume"
@@ -76,25 +76,19 @@
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
             android:inputType="numberDecimal"
-            android:imeOptions="actionNext"
+            android:imeOptions="actionDone"
             android:layout_gravity="center_horizontal"
             android:background="@color/amarelo_claro"
             android:hint="Largura (Y) cm" />
 
-        <EditText
-            android:id="@+id/edtNAltura"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
-            android:paddingLeft="3dp"
-            android:paddingRight="3dp"
-            android:inputType="numberDecimal"
-            android:imeOptions="actionDone"
-            android:layout_gravity="center_horizontal"
-            android:background="@color/amarelo_claro"
-            android:hint="Altura (Z) cm" />
+            android:layout_marginTop="2dp"
+            android:text="* A altura recomendada é de 5cm."
+            android:textColor="@color/branco_fonte_logo"
+            />
+
 
     </LinearLayout>
 
@@ -139,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:paddingRight="60dp"
-            android:paddingLeft="55dp"
+            android:paddingLeft="56dp"
             android:text="Limpar"
             android:textColor="@color/branco_fonte_logo"
             android:background="@drawable/btn_entrar_seletor"

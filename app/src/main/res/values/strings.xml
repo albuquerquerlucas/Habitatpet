@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Habitat</string>
+    <string name="app_name">Habitat (Beta)</string>
     <string name="msg_boasvindas">Bem Vindo(a)!</string>
     <string name="endereco_email">habitatpet@hotmail.com</string>
     <string name="novo_cadastro">Não possui cadastro ainda?</string>
-    <string name="info_cadastro">Para efetuar seu cadastro informe e-mail e senha.</string>
+    <string name="info_cadastro">Para efetuar seu cadastro informe seu nome, endereço de e-mail e senha.</string>
     <string name="hint_email">email@exemplo.com</string>
     <string name="hint_senha">senha</string>
     <string name="btn_Sair">LOGOUT</string>
@@ -28,5 +28,17 @@
     <string name="nome_planta">Nome</string>
     <string name="nome_planta_cientifico">Nome Científico</string>
 
-    <string name="title_calculadora_aquario">Calculadora de litros p/ aquário quadrados e retangulares</string>
+    <string name="title_ferramentas">Ferramentas, calculadoras e informações gerais para aquaristas.</string>
+    <string name="title_calculadora_aquario">Calcula a capacidade de água em litros p/ aquários quadrados e retangulares</string>
+    <string name="title_calculadora_aquario_cascalho">Calcula a quantidade de cascalho com base na altura recomendada para seu aquário.</string>
+    <string name="title_info_alimentacao">
+        Alimentar uma vez ao dia, ou mais? Aprenda a medida adequada para cada espécie
+    </string>
+    <string name="conteudo_info_alimentacao">
+        Eles são adoráveis, ornamentam com beleza sem igual o aquário, mas exigem cuidados específicos. Extremamente sensíveis, os peixes necessitam, além de atenção quanto à água, temperatura, ph, etc, cuidados com a alimentação. Justamente por não reclamarem que estão com fome, torna-se um verdadeiro mistério para os criadores descobrirem a quantidade ideal oferecida.
+        Apesar de não haver uma fórmula mágica que se aplique a 100% das espécies, a dica mais comum e eficaz, é alimentar o animal de duas a três vezes ao dia. A quantidade adequada deve ser aquela que o peixe consuma em menos de três minutos. Isso quer dizer que, após esse tempo, se ainda tiver comida no aquário, o dono deve diminuir a quantidade que está oferecendo.
+        Isso porque os animais não devem ser alimentados até que pareçam satisfeitos. Ao contrário do que muitos imaginam, na natureza, os peixes são adaptados a passar a maior parte do dia com fome, à procura de pequenos pedaços de comida. É justamente por isso que é considerado um erro superalimentá-los.
+        Vale lembrar que, apesar desta tática funcionar bem para aquários de principiantes e comunitários, as criações de espécie única, de reprodução e de hospital exigem uma abordagem mais cuidadosa e específica. Nesse caso, apenas um veterinário ou especialista pode indicar a quantidade ideal de comida.
+        Para regra geral, o criador deve ter em mente que é mais fácil enfraquecer ou até matar um peixe devido à alimentação em excesso (porque isso estraga a água do aquário) do que fazê-los morrer de fome. Há aquaristas, inclusive, que defendem o jejum um dia por semana, porque o processo pode limpar o organismo do animal.
+    </string>
 </resources>

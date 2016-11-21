@@ -7,10 +7,10 @@ package com.mobile.app;
 public class AppConfiguracao {
 
     public static String ipCasa = "192.168.25.5:80";
-    public static String ipFa7 = "10.54.108.53:80";
-    public static String ipServidor = "serverside.esy.es";
-    public static String ipGenymotion = "10.0.3.2:80";
-    public static String ipHost = "127.0.0.1:80";
+    //public static String ipFa7 = "10.54.108.53:80";
+    //public static String ipServidor = "serverside.esy.es";
+    //public static String ipGenymotion = "10.0.3.2:80";
+    //public static String ipHost = "127.0.0.1:80";
 
     // Para servidor Local
     public static String URL_LOGIN = "http://" + ipCasa + "/habitatpetWs/serverside/loginUsuario.php";

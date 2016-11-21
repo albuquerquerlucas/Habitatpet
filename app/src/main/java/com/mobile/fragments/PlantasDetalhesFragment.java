@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mobile.R;
+import com.mobile.helper.SQLiteHandler;
+import com.mobile.helper.SessionManager;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -25,6 +27,9 @@ public class PlantasDetalhesFragment extends Fragment {
 
     private EditText edtQuantidade;
     private Button btnAddOrcamento;
+    private SQLiteHandler db;
+    private SessionManager session;
+    String nomeItem, qtdItem;
 
     public PlantasDetalhesFragment() {
 
@@ -34,6 +39,9 @@ public class PlantasDetalhesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.plantas_detalhes_fragment, container, false);
         Bundle args = getArguments();
+
+        db = new SQLiteHandler(getActivity().getApplicationContext());
+        session = new SessionManager(getActivity().getApplicationContext());
 
         ImageView img = (ImageView) view.findViewById(R.id.iPlantas);
         TextView tx1 = (TextView) view.findViewById(R.id.txtDetPlantNome);
@@ -51,12 +59,16 @@ public class PlantasDetalhesFragment extends Fragment {
 
         edtQuantidade = (EditText) view.findViewById(R.id.edtQtdPeixes);
         btnAddOrcamento = (Button) view.findViewById(R.id.btnAddQtdPeixes);
+
         btnAddOrcamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String qtd = edtQuantidade.getText().toString();
 
-                if(!qtd.isEmpty()){
+                qtdItem = edtQuantidade.getText().toString();
+
+                if(!qtdItem.isEmpty()){
+
+                    db.salvarProdutos(nomeItem, Integer.parseInt(qtdItem));
                     edtQuantidade.setText("");
                     Toast.makeText(getActivity().getApplicationContext(), "Adicionado à lista de Orçamento.", Toast.LENGTH_LONG).show();
                 }else{
@@ -81,6 +93,8 @@ public class PlantasDetalhesFragment extends Fragment {
         tx10.setText(args.getString("substrato"));
         tx11.setText(args.getString("co2"));
         tx12.setText(args.getString("disponibilidadePlanta"));
+
+        nomeItem = tx1.getText().toString();
 
         setupToolbar(view);
         return view;

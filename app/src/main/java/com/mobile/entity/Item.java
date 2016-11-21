@@ -31,4 +31,9 @@ public class Item implements Serializable {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString(){
+        return "" + getQuantidade() + "  " + getDescricao() + ";";
+    }
 }

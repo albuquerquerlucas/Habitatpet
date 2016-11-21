@@ -1,5 +1,6 @@
 package com.mobile.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -17,14 +18,18 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.mobile.R;
 
+import java.util.ArrayList;
+
 public class MapaActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private static ArrayList<Activity> activities=new ArrayList<Activity>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
+        activities.add(this);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -51,6 +56,12 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
                 .title("Habitat Pet")
                 .snippet("Av. da Universidade, 2057, Benfica, Fortaleza - CE"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(fortaleza, 18));
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        activities.remove(this);
     }
 
     // Impede o caboco voltar pelo android.

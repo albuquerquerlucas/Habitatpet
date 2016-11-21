@@ -1,6 +1,7 @@
 package com.mobile.fragments;
 
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -125,4 +126,9 @@ public class CalculaVolumeFragment extends Fragment {
             bar.setTitle(activity.getString(R.string.ferramentas));
         }
     }
+
+    /*@Override
+    public void onDestroyView(){
+        getActivity().getFragmentManager().beginTransaction().remove(CalculaVolumeFragment.this).commit();
+    }*/
 }

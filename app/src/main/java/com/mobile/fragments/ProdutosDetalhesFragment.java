@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mobile.R;
+import com.mobile.helper.SQLiteHandler;
+import com.mobile.helper.SessionManager;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -25,6 +27,9 @@ public class ProdutosDetalhesFragment extends Fragment {
 
     private EditText edtQuantidade;
     private Button btnAddOrcamento;
+    private SQLiteHandler db;
+    private SessionManager session;
+    String nomeItem, qtdItem;
 
     public ProdutosDetalhesFragment() {
 
@@ -34,6 +39,9 @@ public class ProdutosDetalhesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.produtos_detalhes_fragment, container, false);
         Bundle args = getArguments();
+
+        db = new SQLiteHandler(getActivity().getApplicationContext());
+        session = new SessionManager(getActivity().getApplicationContext());
 
         ImageView img = (ImageView) view.findViewById(R.id.iProdutos);
         TextView txtNomeProduto = (TextView) view.findViewById(R.id.txtDetProdNome);
@@ -48,9 +56,10 @@ public class ProdutosDetalhesFragment extends Fragment {
         btnAddOrcamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String qtd = edtQuantidade.getText().toString();
+                qtdItem = edtQuantidade.getText().toString();
 
-                if(!qtd.isEmpty()){
+                if(!qtdItem.isEmpty()){
+                    db.salvarProdutos(nomeItem, Integer.parseInt(qtdItem));
                     edtQuantidade.setText("");
                     Toast.makeText(getActivity().getApplicationContext(), "Adicionado à lista de Orçamento.", Toast.LENGTH_LONG).show();
                 }else{
@@ -69,6 +78,8 @@ public class ProdutosDetalhesFragment extends Fragment {
         txtMarcaProduto.setText(args.getString("marca"));
         txtModeloProduto.setText(args.getString("modelo"));
         txtStatusProduto.setText(args.getString("statusProduto"));
+
+        nomeItem = txtNomeProduto.getText().toString();
 
         setupToolbar(view);
         return view;

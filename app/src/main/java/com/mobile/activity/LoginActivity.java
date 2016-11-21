@@ -23,12 +23,14 @@ import com.mobile.helper.SessionManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends Activity {
 
     private static final String TAG = CadastroActivity.class.getSimpleName();
+    private static ArrayList<Activity> activities=new ArrayList<Activity>();
     private EditText edtEmail;
     private EditText edtSenha;
     private Button btnEntrar;
@@ -41,6 +43,7 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        activities.add(this);
 
         edtEmail = (EditText) findViewById(R.id.edtLEmail);
         edtSenha = (EditText) findViewById(R.id.edtLSenha);
@@ -53,12 +56,12 @@ public class LoginActivity extends Activity {
         sessao = new SessionManager(getApplicationContext());
         ///sessao.setLogin(false);
 
-        /*if (sessao.isLoggedIn()) {
+        if (sessao.isLoggedIn()) {
 
             Intent intent = new Intent(LoginActivity.this, PrincipalActivity.class);
             startActivity(intent);
             finish();
-        }*/
+        }
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,5 +173,17 @@ public class LoginActivity extends Activity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        activities.remove(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //return nothing
+        return;
     }
 }

@@ -103,4 +103,9 @@ public class CalculaCascalhoFragment extends Fragment {
             bar.setTitle(activity.getString(R.string.ferramentas));
         }
     }
+
+    /*@Override
+    public void onDestroyView(){
+        getActivity().getFragmentManager().beginTransaction().remove(CalculaCascalhoFragment.this).commit();
+    }*/
 }

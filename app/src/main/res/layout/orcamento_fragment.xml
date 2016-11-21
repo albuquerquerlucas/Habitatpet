@@ -14,7 +14,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:weightSum="1"
+        android:layout_above="@+id/btnCancelarPedido">
 
         <TextView
             android:layout_width="match_parent"
@@ -23,7 +25,31 @@
             android:padding="5dp"
             android:text="Produtos p/ orçamento:"
             android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@color/azulEscuro"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:id="@+id/txtTitleOrc1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="QTD     |     Descrição Item"
+                    android:textColor="@color/azulEscuro"/>
+
+                <TextView
+                    android:id="@+id/txtTitleOrc2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/azulEscuro"
+                    android:text="----------------------------------------------------------------------------"/>
+            </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -42,13 +68,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="5dp"
-                    android:text="Não possui itens no momento."
-                    android:textSize="18sp" />
+                    android:text="none"
+                    android:textSize="18sp"
+                    android:textColor="@color/azulEscuro"/>
 
             </LinearLayout>
 
         </ScrollView>
     </LinearLayout>
+
+    <Button
+        android:text="Cancelar Pedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCancelarPedido"
+        android:textColor="@color/branco_fonte_logo"
+        android:background="@drawable/btn_entrar_seletor"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_above="@+id/btnEnviarPedido"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Enviar Pedido"

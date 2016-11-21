@@ -23,12 +23,14 @@ import com.mobile.helper.SessionManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CadastroActivity extends Activity {
 
     private static final String TAG = CadastroActivity.class.getSimpleName();
+    private static ArrayList<Activity> activities=new ArrayList<Activity>();
     private EditText edtNome;
     private EditText edtEmail;
     private EditText edtSenha;
@@ -42,6 +44,7 @@ public class CadastroActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+        activities.add(this);
 
         edtNome = (EditText) findViewById(R.id.edtCNome);
         edtEmail = (EditText) findViewById(R.id.edtCEmail);
@@ -162,5 +165,17 @@ public class CadastroActivity extends Activity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        activities.remove(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //return nothing
+        return;
     }
 }

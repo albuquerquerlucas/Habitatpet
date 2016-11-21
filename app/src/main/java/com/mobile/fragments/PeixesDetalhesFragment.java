@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.mobile.R;
 import com.mobile.entity.Item;
 import com.mobile.entity.Pedido;
+import com.mobile.helper.SQLiteHandler;
+import com.mobile.helper.SessionManager;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -29,6 +31,8 @@ public class PeixesDetalhesFragment extends Fragment {
 
     private EditText edtQuantidade;
     private Button btnAddOrcamento;
+    private SQLiteHandler db;
+    private SessionManager session;
     String nomeItem, qtdItem;
 
     public PeixesDetalhesFragment() {
@@ -39,6 +43,9 @@ public class PeixesDetalhesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.peixes_detalhes_fragment, container, false);
         Bundle args = getArguments();
+
+        db = new SQLiteHandler(getActivity().getApplicationContext());
+        session = new SessionManager(getActivity().getApplicationContext());
 
         ImageView img = (ImageView) view.findViewById(R.id.iPeixes);
         TextView tx1 = (TextView) view.findViewById(R.id.txtDetNome);
@@ -52,6 +59,8 @@ public class PeixesDetalhesFragment extends Fragment {
         TextView tx9 = (TextView) view.findViewById(R.id.txtDetTipo);
         TextView tx10 = (TextView) view.findViewById(R.id.txtDetDisponibilidade);
 
+
+
         edtQuantidade = (EditText) view.findViewById(R.id.edtQtdPeixes);
         btnAddOrcamento = (Button) view.findViewById(R.id.btnAddQtdPeixes);
 
@@ -61,7 +70,11 @@ public class PeixesDetalhesFragment extends Fragment {
 
                 qtdItem = edtQuantidade.getText().toString();
 
+
                 if(!qtdItem.isEmpty()){
+
+                    db.salvarProdutos(nomeItem, Integer.parseInt(qtdItem));
+
                     edtQuantidade.setText("");
                     Toast.makeText(getActivity().getApplicationContext(), "Adicionado à lista de Orçamento.", Toast.LENGTH_LONG).show();
                 }else{
@@ -84,6 +97,8 @@ public class PeixesDetalhesFragment extends Fragment {
         tx8.setText(args.getString("posicao"));
         tx9.setText(args.getString("tipo"));
         tx10.setText(args.getString("disponibilidade"));
+
+        nomeItem = tx1.getText().toString();
 
         setupToolbar(view);
         return view;

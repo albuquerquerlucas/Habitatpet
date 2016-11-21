@@ -105,7 +105,8 @@ public class PrincipalActivity  extends AppCompatActivity implements NavigationV
             closeNavigationDrawer();
         }
         else {
-            super.onBackPressed();
+            //super.onBackPressed();
+            return;
         }
     }
 
@@ -131,6 +132,7 @@ public class PrincipalActivity  extends AppCompatActivity implements NavigationV
     private void logoutUsuario() {
         session.setLogin(false);
         db.deletarUsuarios();
+        db.deletarProdutos();
 
         Intent intent = new Intent(PrincipalActivity.this, LoginActivity.class);
         startActivity(intent);
